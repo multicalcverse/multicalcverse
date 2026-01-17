@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Interest Calculator for Students in India</title>
+  <meta name="description" content="Use this simple interest calculator for students in India to calculate interest based on principal, rate, and time.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    h1, h2, h3 { margin-top: 30px; }
+    label { display: block; margin-top: 10px; }
+    input { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 10px 15px; font-size: 16px; }
+    .result { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+
+<h1>Simple Interest Calculator for Students in India</h1>
+
+<p>
+This simple interest calculator helps students in India calculate interest easily
+based on principal amount, rate of interest, and time period.
+</p>
+
+<h2>Calculator Inputs</h2>
+
+<label>Principal Amount (₹)</label>
+<input type="number" id="principal">
+
+<label>Rate of Interest (%)</label>
+<input type="number" id="rate">
+
+<label>Time Period (Years)</label>
+<input type="number" id="time">
+
+<button onclick="calculateSI()">Calculate Simple Interest</button>
+
+<div class="result" id="output"></div>
+
+<h2>Explanation</h2>
+<p>
+This calculator uses the simple interest formula to calculate interest on the
+principal amount for a fixed period of time.
+</p>
+
+<h2>Simple Interest Formula</h2>
+<p><strong>Simple Interest = (Principal × Rate × Time) / 100</strong></p>
+
+<h2>Example</h2>
+<p>
+If a student invests ₹10,000 at a rate of 5% per year for 2 years,
+the simple interest will be ₹1,000 and the total amount will be ₹11,000.
+</p>
+
+<h2>FAQs</h2>
+
+<h3>What is simple interest?</h3>
+<p>
+Simple interest is calculated only on the principal amount and does not
+include interest on previously earned interest.
+</p>
+
+<h3>Who should use this calculator?</h3>
+<p>
+Students learning basic interest calculations can use this calculator.
+</p>
+
+<h3>Is this calculator accurate for India?</h3>
+<p>
+Yes, it follows the standard simple interest formula used in India.
+</p>
+
+<script>
+function calculateSI() {
+  let p = parseFloat(document.getElementById("principal").value);
+  let r = parseFloat(document.getElementById("rate").value);
+  let t = parseFloat(document.getElementById("time").value);
+
+  if (isNaN(p) || isNaN(r) || isNaN(t)) {
+    document.getElementById("output").innerHTML = "Please enter all values.";
+    return;
+  }
+
+  let si = (p * r * t) / 100;
+  let total = p + si;
+
+  document.getElementById("output").innerHTML =
+    "Simple Interest = ₹" + si.toFixed(2) + "<br>Total Amount = ₹" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
