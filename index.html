@@ -1,105 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="9Kn1ude68u1gTBv68PaMgLtowd-L3X8LkKIu68wI3J0" />
-  <title></title>
-<meta name="description" content="">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://multicalcverse.github.io/multicalcverse/">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta charset="UTF-8">
-  <title>Simple Interest Calculator for Students in India</title>
-  <meta name="description" content="Use this simple interest calculator for students in India to calculate interest based on principal, rate, and time.">
+  <title>Simple Interest Calculator</title>
+  <meta name="description" content="Free simple interest calculator. Calculate interest easily.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-    h1, h2, h3 { margin-top: 30px; }
-    label { display: block; margin-top: 10px; }
-    input { width: 100%; padding: 8px; margin-top: 5px; }
-    button { margin-top: 15px; padding: 10px 15px; font-size: 16px; }
-    .result { margin-top: 15px; font-weight: bold; }
-  </style>
 </head>
-
 <body>
 
-<h1> id="page-title">Loading...</h1>
+<h1>Simple Interest Calculator</h1>
 
-<p> id="intro"></p>
+<label>Principal Amount</label><br>
+<input type="number" id="principal"><br><br>
 
-<h2>Calculator Inputs</h2>
-  <!-- inputs form -->
+<label>Rate of Interest (%)</label><br>
+<input type="number" id="rate"><br><br>
 
-<label>Principal Amount (<span id="currency">₹</span>)</label>
-<input type="number" id="principal">
+<label>Time (Years)</label><br>
+<input type="number" id="time"><br><br>
 
-<label>Rate of Interest (%)</label>
-<input type="number" id="rate">
+<button onclick="calculateSI()">Calculate</button>
 
-<label>Time Period (Years)</label>
-<input type="number" id="time">
-
-<button onclick="calculateSI()">Calculate Simple Interest</button>
-
-<div class="result" id="output"></div>
-
-<h2>Explanation</h2>
-  <p id="explanation"></p> 
-<p>
-</p>
-
-<h2>Simple Interest Formula</h2>
-<p><strong>Simple Interest = (Principal × Rate × Time) / 100</strong></p>
-
-<h2>Example</h2>
-  <p id="example"></p>
-<p>
-</p>
-  <!-- rest of calculator -->
-
-<h2>FAQs</h2>
-
-<h3>What is simple interest?</h3>
-<p>
-Simple interest is calculated only on the principal amount and does not
-include interest on previously earned interest.
-</p>
-
-<h3>Who should use this calculator?</h3>
-<p>
-Students learning basic interest calculations can use this calculator.
-</p>
-
-<h3>Is this calculator accurate for India?</h3>
-<p>
-Yes, it follows the standard simple interest formula used in India.
-</p>
+<p id="result"></p>
 
 <script>
 function calculateSI() {
-  let p = parseFloat(document.getElementById("principal").value);
-  let r = parseFloat(document.getElementById("rate").value);
-  let t = parseFloat(document.getElementById("time").value);
+  let p = Number(document.getElementById("principal").value);
+  let r = Number(document.getElementById("rate").value);
+  let t = Number(document.getElementById("time").value);
 
-  if (isNaN(p) || isNaN(r) || isNaN(t)) {
-    document.getElementById("output").innerHTML = "Please enter all values.";
+  if (!p || !r || !t) {
+    document.getElementById("result").innerText = "Please enter all values";
     return;
   }
 
   let si = (p * r * t) / 100;
   let total = p + si;
 
-  document.getElementById("output").innerHTML =
-    "Simple Interest = ₹" + si.toFixed(2) + "<br>Total Amount = ₹" + total.toFixed(2);
+  document.getElementById("result").innerText =
+    "Simple Interest = ₹" + si + " | Total Amount = ₹" + total;
 }
 </script>
-<script src="assets/js/engine.js"></script>
-  <script>
-    loadCalculator();
-  </script>
+
 </body>
 </html>
+
