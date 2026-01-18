@@ -4,11 +4,12 @@ async function loadCalculator() {
 
   if (!calcId) return;
 
-  const response = await fetch("/data/formulas.json");
+ const response = await fetch("data/formulas.json");
   const data = await response.json();
 
-  const calc = data.find(item => item.id === calcId);
-  if (!calc) return;
+const calc = data[calcId];
+if (!calc)
+  return;
 
   // SEO
   document.title = calc.title;
