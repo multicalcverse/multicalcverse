@@ -5,9 +5,41 @@
   <title>Simple Interest Calculator</title>
   <meta name="description" content="Free simple interest calculator. Calculate interest easily.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  #result {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
-
+<div class="container">
 <h1>Simple Interest Calculator</h1>
 
 <label>Principal Amount</label><br>
@@ -22,6 +54,7 @@
 <button onclick="calculateSI()">Calculate</button>
 
 <p id="result"></p>
+</div>
 
 <script>
 function calculateSI() {
