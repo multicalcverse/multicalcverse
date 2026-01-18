@@ -7,7 +7,8 @@ async function loadCalculator() {
  const response = await fetch("data/formulas.json");
   const data = await response.json();
 
-const calc = data[calcId];
+const calc = data.calculators.find(item =>
+  item.id === calcId);
 if (!calc)
   return;
 
