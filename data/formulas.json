@@ -1,0 +1,18 @@
+{
+  "calculators": [
+    {
+      "id": "simple-interest-india-students",
+      "category": "finance",
+      "subcategory": "interest",
+      "country": "India",
+      "user_type": "Students",
+      "title": "Simple Interest Calculator for Students in India",
+      "meta_description": "Calculate simple interest easily for students in India using principal, rate of interest, and time period.",
+      "variables": ["principal", "rate", "time"],
+      "formula": "(principal * rate * time) / 100",
+      "currency": "INR",
+      "status": "active"
+    }
+  ]
+}
+
